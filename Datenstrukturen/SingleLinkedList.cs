@@ -6,17 +6,66 @@ using System.Threading.Tasks;
 
 namespace Datenstrukturen
 {
-     class SingleLinkedList
+     public class SingleLinkedList
     {
-        void insert(Node newNode)
+        public Node head;
+    
+        public void insert(int newElement)
         {
 
+            
+            Node newNode = new Node(0);
+
+            newNode.data = newElement;
+
+            newNode.next = null;
+
+            if (head == null)
+            {
+                head = newNode;
+            }
+            else
+            {
+     
+                Node temp = new Node(0);
+                temp = head;
+                while (temp.next != null)
+                    temp = temp.next;
+
+                temp.next = newNode;
+            }
         }
 
-        int count()
-        { 
-            return 0;
+
+
+        public int countNodes()
+        {
+
+            Node temp = new Node(0);
+            temp = this.head;
+
+            
+            int i = 0;
+
+            
+            while (temp != null)
+            {
+                i++;
+                temp = temp.next;
+            }
+      
+            Console.WriteLine(i);
+            return i;
         }
 
+        public void printList()
+        {
+            Node n = head;
+            while (n != null)
+            {
+                Console.Write(n.data + " ");
+                n = n.next;
+            }
+        }
     }
 }
