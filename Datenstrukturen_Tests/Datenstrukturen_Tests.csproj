@@ -16,6 +16,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Datenstrukturen\LinkedList.csproj" />
+    <ProjectReference Include="..\SingleLinkedList\SingleLinkedList.csproj" />
   </ItemGroup>
 
 </Project>

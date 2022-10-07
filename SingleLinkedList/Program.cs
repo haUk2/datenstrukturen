@@ -1,4 +1,5 @@
-﻿using Datenstrukturen;
+﻿
+using SingleLinkedList;
 
 class Program
 {
@@ -7,18 +8,14 @@ class Program
 
 
 
-        SingleLinkedList llist = new SingleLinkedList();
+        SingleLinkedListClass llist = new SingleLinkedListClass();
 
-
-        llist.head = new Node(1);
-        Node second = new Node(2);
-        Node third = new Node(3);
-
-        llist.head.next = second;
-        second.next = third;
-
-        llist.insert(5);
-        llist.countNodes();
+        llist.insertLast(1);
+        llist.insertLast(2);
+        llist.insertFirst(5);
+        llist.insertLast(6);
+        llist.GetNode(6);
+        llist.Delete(6);
         llist.printList();
 
 

@@ -6,8 +6,11 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "stack", "stack\stack.csproj", "{60F6701C-8D0B-47F3-91CB-FA7AD1487714}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Datenstrukturen_Tests", "Datenstrukturen_Tests\Datenstrukturen_Tests.csproj", "{6D91107B-3D92-4CB6-88D5-DE25022E7E26}"
+	ProjectSection(ProjectDependencies) = postProject
+		{CB1084B0-0EE8-4962-A708-AB0021AB8401} = {CB1084B0-0EE8-4962-A708-AB0021AB8401}
+	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SingleLinkedList", "SingleLinkedList\SingleLinkedList.csproj", "{CB1084B0-0EE8-4962-A708-AB0021AB8401}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SingleLinkedList", "SingleLinkedList\SingleLinkedList.csproj", "{CB1084B0-0EE8-4962-A708-AB0021AB8401}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
