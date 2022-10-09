@@ -93,6 +93,8 @@ namespace SingleLinkedList
                 return null;
             }
         }
+
+
         public void Delete(Node value)
         {
             if (head == null) return;
@@ -126,20 +128,30 @@ namespace SingleLinkedList
             new_node.next = insertafter.next;
             insertafter.next = new_node;
         }
-        public int GetNode_at_Position(int position)
+        public Node GetNode_at_Position(int position)
         {
             Node current = head;
             int count = 0; 
             while (current != null)
             {
                 if (count == position)
-                    return current.data;
+                    return current;
                 count++;
                 current = current.next;
             }
+            return null;
+        }
 
-
-            return 0;
+        public Node GetNode_mmu(int argData)
+        {
+            Node current = head;
+            while (current != null)
+            {
+                if (current.data == argData)
+                    return current;
+                current = current.next;
+            }
+            return null;
         }
 
     }
@@ -147,3 +159,5 @@ namespace SingleLinkedList
 
         
     
+
+

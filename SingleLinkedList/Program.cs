@@ -14,8 +14,8 @@ class Program
         llist.insertLast(2);
         llist.insertFirst(5);
         llist.insertLast(6);
-        llist.GetNode(6);
-        llist.Delete(6);
+        var node = llist.GetNode(6);
+        llist.Delete(node);
         llist.printList();
 
 
