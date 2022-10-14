@@ -19,7 +19,6 @@ namespace SingleLinkedList
         }
         public void insertLast(int newElement)
         {
-
             Node newNode = new Node(0);
             newNode.data = newElement;
             newNode.next = null;
@@ -32,7 +31,7 @@ namespace SingleLinkedList
                 Node temp = new Node(0);
                 temp = head;
                 while (temp.next != null)
-                    temp = temp.next;
+                temp = temp.next;
                 temp.next = newNode;
             }
         }
@@ -46,11 +45,9 @@ namespace SingleLinkedList
                 i++;
                 temp = temp.next;
             }
-
             Console.WriteLine(i);
             return i;
         }
-
         public void printList()
         {
             Node n = head;
@@ -60,51 +57,25 @@ namespace SingleLinkedList
                 n = n.next;
             }
         }
-
         public Node GetNode(int data)
         {
-            Node temp = new Node(0);
-            temp = this.head;
-            int found = 0;
-            int i = 0;
-            if (temp != null)
+            Node current = head;
+            while (current != null)
             {
-                while (temp != null)
-                {
-                    i++;
-                    if (temp.data == data)
-                    {
-                        found++;
-                        break;
-                    }
-                    temp = temp.next;
-                }
-                if (found == 1)
-                {
-                    return temp;
-                }
-                else
-                {
-                    return null;
-                }
+                if (current.data == data)
+                    return current;
+                current = current.next;
             }
-            else
-            {
-                return null;
-            }
+            return null;
         }
-
-
         public void Delete(Node value)
         {
             if (head == null) return;
-
             if (head.data == value.data)
             {
                 head = head.next;
                 return;
             }
-
             var n = head;
             while (n.next != null)
             {
@@ -116,7 +87,6 @@ namespace SingleLinkedList
                 n = n.next;
             }
         }
-
         public void InsertAfter(Node insertafter, int new_data)
         {
             if (InsertAfter == null)
@@ -141,7 +111,6 @@ namespace SingleLinkedList
             }
             return null;
         }
-
         public Node GetNode_mmu(int argData)
         {
             Node current = head;
