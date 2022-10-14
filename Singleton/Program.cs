@@ -17,5 +17,8 @@ class Program
         Console.WriteLine(Ludwig.Angriffsbefehl());
 
         Console.WriteLine(Heinrich.RueckzugsBefehl());
+
+        Console.WriteLine("Program exit");
+
     }
 }
