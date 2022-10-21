@@ -122,7 +122,33 @@ namespace SingleLinkedList
             }
             return null;
         }
-
+        public Node SwitchNodes(Node firstnode, Node secondnode)
+        {
+            if (firstnode == null)
+            {
+                return null;
+            }
+            else if (secondnode == null)
+            {
+                return null;
+            }           
+            int firstnodedata = firstnode.data;
+            int secondnodedata = secondnode.data;
+            Node pos1 = this.head;
+            Node pos2 = this.head;
+            while (pos1.data != firstnodedata)
+            {
+                pos1 = pos1.next;
+            }
+            while (pos2.data != secondnodedata)
+            {
+                pos2 = pos2.next;
+            } 
+            int val = pos1.data;
+            pos1.data = pos2.data;
+            pos2.data = val;
+            return pos1;
+        }
     }
 }
 
