@@ -109,5 +109,48 @@ namespace Testproject1
             var node = myLL1.GetNode(42);
             Assert.AreEqual(null, node);
         }
+
+
+        [Test]
+        public void SwitchNode_Values_Switch()
+        {
+            SingleLinkedListClass llist = new SingleLinkedListClass();
+            var myLL1 = new SingleLinkedListClass();
+            myLL1.insertLast(1);
+            myLL1.insertLast(1);
+            myLL1.insertLast(5);            
+            var node = myLL1.GetNode_mmu(1);
+            var node1 = myLL1.GetNode_mmu(5);
+            myLL1.SwitchNodes(node, node1);
+            Assert.AreEqual(5, node.data); 
+        }
+        [Test]
+        public void SwitchNode_First_Node_Does_Not_Exist()
+        {
+            SingleLinkedListClass llist = new SingleLinkedListClass();
+            var myLL1 = new SingleLinkedListClass();
+            myLL1.insertLast(1);
+            myLL1.insertLast(1);
+            myLL1.insertLast(5);
+            var node = myLL1.GetNode_mmu(1);
+            var node1 = myLL1.GetNode_mmu(5);
+            node1 = null;
+            Assert.AreEqual(null, myLL1.SwitchNodes(node, node1));
+        }
+        [Test]
+        public void SwitchNode_Second_Node_Does_Not_Exist()
+        {
+            SingleLinkedListClass llist = new SingleLinkedListClass();
+            var myLL1 = new SingleLinkedListClass();
+            myLL1.insertLast(1);
+            myLL1.insertLast(1);
+            myLL1.insertLast(5);
+            var node = myLL1.GetNode_mmu(1);
+            var node1 = myLL1.GetNode_mmu(5);
+            node = null;
+            Assert.AreEqual(null, myLL1.SwitchNodes(node, node1));
+        }
+
+
     }
 }
