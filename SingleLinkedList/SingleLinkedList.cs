@@ -131,11 +131,9 @@ namespace SingleLinkedList
             else if (secondnode == null)
             {
                 return null;
-            }
-                
+            }           
             int firstnodedata = firstnode.data;
             int secondnodedata = secondnode.data;
-            
             Node pos1 = this.head;
             Node pos2 = this.head;
             while (pos1.data != firstnodedata)
