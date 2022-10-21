@@ -134,7 +134,7 @@ namespace Testproject1
             myLL1.insertLast(5);
             var node = myLL1.GetNode_mmu(1);
             var node1 = myLL1.GetNode_mmu(5);
-            node1 = null;
+            node = null;
             Assert.AreEqual(null, myLL1.SwitchNodes(node, node1));
         }
         [Test]
@@ -147,7 +147,7 @@ namespace Testproject1
             myLL1.insertLast(5);
             var node = myLL1.GetNode_mmu(1);
             var node1 = myLL1.GetNode_mmu(5);
-            node = null;
+            node1 = null;
             Assert.AreEqual(null, myLL1.SwitchNodes(node, node1));
         }
 
