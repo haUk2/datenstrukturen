@@ -110,7 +110,6 @@ namespace Testproject1
             Assert.AreEqual(null, node);
         }
 
-
         [Test]
         public void SwitchNode_Values_Switch()
         {
@@ -150,7 +149,5 @@ namespace Testproject1
             node1 = null;
             Assert.AreEqual(null, myLL1.SwitchNodes(node, node1));
         }
-
-
     }
 }
