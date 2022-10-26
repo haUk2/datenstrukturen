@@ -149,6 +149,23 @@ namespace SingleLinkedList
             pos2.data = val;
             return pos1;
         }
+
+        public override string ToString()
+        {
+            string retval = "";
+            if (head == null)
+                return "No elements in List";
+
+            var node = head;
+            while (node != null)
+            {
+                retval += "| " + node.data + " ";
+                node = node.next;
+            }
+            retval += "|";
+            return retval;
+        }
+
     }
 }
 

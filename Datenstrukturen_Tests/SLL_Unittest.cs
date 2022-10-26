@@ -111,7 +111,7 @@ namespace Testproject1
         }
 
         [Test]
-        public void SwitchNode_Values_Switch()
+        public void SwitchNode_NodesExists_NodesAreSwitched()
         {
             SingleLinkedListClass llist = new SingleLinkedListClass();
             var myLL1 = new SingleLinkedListClass();
@@ -121,7 +121,7 @@ namespace Testproject1
             var node = myLL1.GetNode_mmu(1);
             var node1 = myLL1.GetNode_mmu(5);
             myLL1.SwitchNodes(node, node1);
-            Assert.AreEqual(5, node.data); 
+            Assert.AreEqual(myLL1.ToString(), "| 5 | 1 | 1 |"); 
         }
         [Test]
         public void SwitchNode_First_Node_Does_Not_Exist()
@@ -145,8 +145,9 @@ namespace Testproject1
             myLL1.insertLast(1);
             myLL1.insertLast(5);
             var node = myLL1.GetNode_mmu(1);
-            var node1 = myLL1.GetNode_mmu(5);
+            var node1 = myLL1.GetNode_mmu(42);
             node1 = null;
+            myLL1.SwitchNodes(node, node1);
             Assert.AreEqual(null, myLL1.SwitchNodes(node, node1));
         }
     }
