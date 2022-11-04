@@ -9,6 +9,7 @@ namespace SingleLinkedList
     public class SingleLinkedListClass
     {
         public Node head;
+        public Node sorted;
 
         public void insertFirst(int newElement)
         {
@@ -148,6 +149,38 @@ namespace SingleLinkedList
             pos1.data = pos2.data;
             pos2.data = val;
             return pos1;
+        }
+        public void insertionSort(Node headref)
+        {          
+            sorted = null;
+            Node current = headref;        
+            while (current != null)
+            {             
+                Node next = current.next;          
+                sortedInsert(current);
+                current = next;
+            }      
+            head = sorted;
+        }
+        public void sortedInsert(Node newnode)
+        {
+          
+            if (sorted == null || sorted.data >= newnode.data)
+            {
+                newnode.next = sorted;
+                sorted = newnode;
+            }
+            else
+            {
+                Node current = sorted;
+                while (current.next != null &&
+                        current.next.data < newnode.data)
+                {
+                    current = current.next;
+                }
+                newnode.next = current.next;
+                current.next = newnode;
+            }
         }
     }
 }
