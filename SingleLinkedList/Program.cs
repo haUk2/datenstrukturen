@@ -18,7 +18,7 @@ class Program
         var node = llist.GetNode_mmu(5);
 
 
-        llist.insertionSort(node);
+        llist.insertionSortinverse(node);
 
         Console.WriteLine("List after Insertion Sort: ");
         llist.printList();

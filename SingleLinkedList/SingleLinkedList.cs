@@ -182,6 +182,47 @@ namespace SingleLinkedList
                 current.next = newnode;
             }
         }
+
+
+        public Node insertionSortinverse(Node headref)
+        {
+            if(headref == null)
+            {
+                return null;
+            }
+            sorted = null;
+            Node current = headref;
+            while (current != null)
+            {
+                Node next = current.next;
+                sortedInsertinverse(current);
+                current = next;
+            }
+            head = sorted;
+            return headref;
+        }
+        public void sortedInsertinverse(Node newnode)
+        {
+
+            if (sorted == null || sorted.data <= newnode.data)
+            {
+                newnode.next = sorted;
+                sorted = newnode;
+            }
+            else
+            {
+                Node current = sorted;
+                while (current.next != null &&
+                        current.next.data > newnode.data)
+                {
+                    current = current.next;
+                }
+                newnode.next = current.next;
+                current.next = newnode;
+            }
+        }
+
+
     }
 }
 
