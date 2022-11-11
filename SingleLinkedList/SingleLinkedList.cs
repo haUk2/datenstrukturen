@@ -9,6 +9,7 @@ namespace SingleLinkedList
     public class SingleLinkedListClass
     {
         public Node head;
+        public Node sorted;
 
         public void insertFirst(int newElement)
         {
@@ -122,6 +123,105 @@ namespace SingleLinkedList
             }
             return null;
         }
+        public Node SwitchNodes(Node firstnode, Node secondnode)
+        {
+            if (firstnode == null)
+            {
+                return null;
+            }
+            else if (secondnode == null)
+            {
+                return null;
+            }           
+            int firstnodedata = firstnode.data;
+            int secondnodedata = secondnode.data;
+            Node pos1 = this.head;
+            Node pos2 = this.head;
+            while (pos1.data != firstnodedata)
+            {
+                pos1 = pos1.next;
+            }
+            while (pos2.data != secondnodedata)
+            {
+                pos2 = pos2.next;
+            } 
+            int val = pos1.data;
+            pos1.data = pos2.data;
+            pos2.data = val;
+            return pos1;
+        }
+        public void insertionSort(Node headref)
+        {          
+            sorted = null;
+            Node current = headref;        
+            while (current != null)
+            {             
+                Node next = current.next;          
+                sortedInsert(current);
+                current = next;
+            }      
+            head = sorted;
+        }
+        public void sortedInsert(Node newnode)
+        {
+          
+            if (sorted == null || sorted.data >= newnode.data)
+            {
+                newnode.next = sorted;
+                sorted = newnode;
+            }
+            else
+            {
+                Node current = sorted;
+                while (current.next != null &&
+                        current.next.data < newnode.data)
+                {
+                    current = current.next;
+                }
+                newnode.next = current.next;
+                current.next = newnode;
+            }
+        }
+
+
+        public Node insertionSortinverse(Node headref)
+        {
+            if(headref == null)
+            {
+                return null;
+            }
+            sorted = null;
+            Node current = headref;
+            while (current != null)
+            {
+                Node next = current.next;
+                sortedInsertinverse(current);
+                current = next;
+            }
+            head = sorted;
+            return headref;
+        }
+        public void sortedInsertinverse(Node newnode)
+        {
+
+            if (sorted == null || sorted.data <= newnode.data)
+            {
+                newnode.next = sorted;
+                sorted = newnode;
+            }
+            else
+            {
+                Node current = sorted;
+                while (current.next != null &&
+                        current.next.data > newnode.data)
+                {
+                    current = current.next;
+                }
+                newnode.next = current.next;
+                current.next = newnode;
+            }
+        }
+
 
     }
 }

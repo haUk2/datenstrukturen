@@ -5,21 +5,22 @@ class Program
 {
     public static void Main(string[] args)
     {
-
-
-
         SingleLinkedListClass llist = new SingleLinkedListClass();
-
         llist.insertLast(1);
         llist.insertLast(2);
         llist.insertFirst(5);
         llist.insertLast(6);
-        var node = llist.GetNode(6);
-        llist.Delete(node);
+
+        Console.WriteLine("List before Insertion Sort: ");
         llist.printList();
 
 
+        var node = llist.GetNode_mmu(5);
 
 
+        llist.insertionSortinverse(node);
+
+        Console.WriteLine("List after Insertion Sort: ");
+        llist.printList();
     }
 }
